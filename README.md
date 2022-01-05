@@ -35,3 +35,27 @@ After this experiment is run, we should be able to tell:
 
 ### Risks
 This experiment is relatively low risk. However, we will be automating Nanopore sequencing prep during experimentation, so we will want time to iterate.
+
+# Code
+Using poly, set up the following code. This basically means I want 2 50mers with all unique 8mers that has a GC content of between 40% and 60%.
+```
+barcodes2 := CreateBarcodesGcRange(50, 8, .4, .6)
+fmt.Println(barcodes2[0])
+fmt.Println(barcodes2[1])
+```
+Got the following output:
+```
+GGACAAAAGGTTAAAAGGTGAAAAGGTCAAAAGGGTAAAAGGGGAAAAGG
+GTTAGTCAGTTAGGTAGTTAGGGAGTTAGGCAGTTAGCTAGTTAGCGAGT
+```
+I will use these as the barcodes for this test. In particular, I'll append ATAA to the top strand and phosophylate the bottom strand.
+
+```
+>iscei_barcode_phos
+GGACAAAAGGTTAAAAGGTGAAAAGGTCAAAAGGGTAAAAGGGGAAAAGGATAA
+/5Phos/CCTTTTCCCCTTTTACCCTTTTGACCTTTTCACCTTTTAACCTTTTGTCC
+
+>iscei_barcode_unphos
+GGACAAAAGGTTAAAAGGTGAAAAGGTCAAAAGGGTAAAAGGGGAAAAGGATAA
+CCTTTTCCCCTTTTACCCTTTTGACCTTTTCACCTTTTAACCTTTTGTCC
+```
