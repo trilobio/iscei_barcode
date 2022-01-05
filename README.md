@@ -48,7 +48,7 @@ Got the following output:
 GGACAAAAGGTTAAAAGGTGAAAAGGTCAAAAGGGTAAAAGGGGAAAAGG
 GTTAGTCAGTTAGGTAGTTAGGGAGTTAGGCAGTTAGCTAGTTAGCGAGT
 ```
-I will use these as the barcodes for this test. In particular, I'll append ATAA to the top strand and phosophylate the bottom strand.
+I will use these as the barcodes for this test. In particular, I'll append [ATAA](https://www.neb.com/products/r0694-i-scei) to the top strand and phosophylate the bottom strand.
 
 ```
 >iscei_barcode_phos
